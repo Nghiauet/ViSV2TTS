@@ -198,7 +198,6 @@ class TextAudioSpeakerLoader(torch.utils.data.Dataset):
             sid = hparams.speaker_embedding_dir + "/" + sid
             if self.min_text_len <= len(text) and len(text) <= self.max_text_len:
                 audiopaths_sid_text_new.append([audiopath, sid, text])
-                
                 spec_filename = audiopath.replace(".wav", ".spec.pt")
                 if os.path.exists(spec_filename):
                     lengths.append(float(torch.load(spec_filename).size(1)) // 2)

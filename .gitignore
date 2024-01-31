@@ -3,3 +3,12 @@ vivos/*
 vivos
 DATA/*
 buildata.py
+*__pycache__*
+viphoneme/__pycache__
+resemblyzer/__pycache__
+viphoneme/__pycache__
+resemblyzer/__pycache__/__init__.cpython-38.pyc
+resemblyzer/__pycache__/audio.cpython-38.pyc
+resemblyzer/__pycache__/hparams.cpython-38.pyc
+resemblyzer/__pycache__/voice_encoder.cpython-38.pyc
+viphoneme/__pycache__/__init__.cpython-38.pyc

@@ -1,4 +1,4 @@
-import gradio as gr
+# import gradio as gr
 import torch
 import numpy as np
 import sys
@@ -81,7 +81,7 @@ class VoiceClone():
                write(ref_audio.replace(".wav", "_clone.wav"), 22050, audios)
           return ref_audio.replace(".wav", "_clone.wav"), text_norm
 
-object = VoiceClone("vits/logs/vivos/G_7700000.pth")
+object = VoiceClone("vits/logs/vivos/G_0.pth")
 
 def clonevoice(text: str, speaker_wav, file_upload, language: str):
 
@@ -99,12 +99,14 @@ def clonevoice(text: str, speaker_wav, file_upload, language: str):
      
      return [outfile, text_norm]
 
-inputs = [gr.Textbox(label="Input", value="muốn ngồi ở một vị trí không ai ngồi được thì phải chịu cảm giác không ai chịu được", max_lines=3),
-          gr.Audio(Lable="Speaker Wav", source="microphone", type="filepath"), 
-          gr.Audio(Lable="Speaker Wav", source="upload", type="filepath"), 
-          gr.Radio(label="Language", choices=["Vietnamese"], value="en")]
-outputs = [gr.Audio(label="Output"), gr.TextArea()]
+# inputs = [gr.Textbox(label="Input", value="muốn ngồi ở một vị trí không ai ngồi được thì phải chịu cảm giác không ai chịu được", max_lines=3),
+#           gr.Audio(Lable="Speaker Wav", source="microphone", type="filepath"), 
+#           gr.Audio(Lable="Speaker Wav", source="upload", type="filepath"), 
+#           gr.Radio(label="Language", choices=["Vietnamese"], value="en")]
+# outputs = [gr.Audio(label="Output"), gr.TextArea()]
 
-demo = gr.Interface(fn=clonevoice, inputs=inputs, outputs=outputs)
+# demo = gr.Interface(fn=clonevoice, inputs=inputs, outputs=outputs)
 
-demo.launch(debug=True)
+# demo.launch(debug=True)
+if __name__ == "__main__":
+     clonevoice("muốn ngồi ở một vị trí không ai ngồi được thì phải chịu cảm giác không ai chịu được", "vits/audio/sontung.wav", None, "Vietnamese")

@@ -289,6 +289,5 @@ def evaluate(hps, generator, eval_loader, writer_eval):
     )
     generator.train()
 
-                           
 if __name__ == "__main__":
   main()
